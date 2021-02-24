@@ -1,0 +1,26 @@
+.type-builder {
+  padding-top: 2rem;
+  max-width: 640px;
+  margin: 0px auto;
+
+  .type-builder__field {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .type-properties {
+    margin-top: 1rem;
+
+    .type-properties__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+
+      h1 {
+        margin: 0;
+      }
+
+    }
+  }
+}

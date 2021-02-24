@@ -1,3 +1,7 @@
+.main {
+  padding: 1rem;
+}
+
 .mat-drawer-container {
   margin-top: 60px;
 }
@@ -5,6 +9,7 @@
 .mat-drawer {
   top: 60px !important;
   width: 300px;
+  background-color: #2D2D2D;
 }
 
 .mat-drawer-content {

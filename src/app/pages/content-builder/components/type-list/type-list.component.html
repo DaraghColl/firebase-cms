@@ -1,0 +1,8 @@
+<div class="type-list">
+    <button class="type-list__new" mat-raised-button color="primary">Create New</button>
+
+    <ul class="type-list__items" *ngFor="let type of typesList">
+        <li class="type-list__item" (click)="onTypeSelect(type)">{{ type.title }}</li>
+    </ul>
+
+</div>

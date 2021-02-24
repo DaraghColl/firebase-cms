@@ -1,0 +1,35 @@
+<div class="type-builder">
+    <mat-form-field class="type-builder__field">
+        <mat-label>Content Name</mat-label>
+        <input matInput [(ngModel)]="contentType.title" required>
+    </mat-form-field>
+
+    <mat-form-field class="type-builder__field">
+        <mat-label>Content Description</mat-label>
+        <input matInput [(ngModel)]="contentType.description" required>
+    </mat-form-field>
+
+    <div class="type-properties">
+        <div class="type-properties__header">
+            <h1>Content Properties</h1>
+            <button class="type-list__new" mat-raised-button color="primary">New Property Type</button>
+        </div>
+
+        <div *ngFor="let field of contentType.props" [ngSwitch]="field.type">
+
+            <!-- INPUT TYPES-->
+            <mat-form-field *ngSwitchCase="'input'" class="type-builder__field">
+                <mat-label>Property Name</mat-label>
+                <input matInput [(ngModel)]="field.title" required>
+            </mat-form-field>
+
+            <!-- TEXTAREA TYPES-->
+            <mat-form-field *ngSwitchCase="'textarea'" class="type-builder__field">
+                <mat-label>Property Name</mat-label>
+                <input matInput [(ngModel)]="field.title" required>
+            </mat-form-field>
+        </div>
+    </div>
+
+
+</div>

@@ -48,3 +48,5 @@ Thumbs.db
 # cypress
 cypress/videos
 cypress/screenshots
+
+notes.txt
