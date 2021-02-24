@@ -6,11 +6,15 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-// ng material
-import { MatIconModule } from '@angular/material/icon';
 import { ContentBuilderComponent } from './pages/content-builder/content-builder.component';
 import { ContentEditorComponent } from './pages/content-editor/content-editor.component';
-import { LoginComponent } from './pages/login/login.component'
+import { LoginComponent } from './pages/login/login.component';
+import { TypeListComponent } from './pages/content-builder/components/type-list/type-list.component';
+
+// ng material
+import { MatIconModule } from '@angular/material/icon';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -18,15 +22,18 @@ import { LoginComponent } from './pages/login/login.component'
     NavbarComponent,
     ContentBuilderComponent,
     ContentEditorComponent,
-    LoginComponent
+    LoginComponent,
+    TypeListComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatIconModule
+    MatIconModule,
+    MatSidenavModule,
+    MatButtonModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
