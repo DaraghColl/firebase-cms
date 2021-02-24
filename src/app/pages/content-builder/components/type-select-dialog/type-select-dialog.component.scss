@@ -1,0 +1,23 @@
+  .type-select {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+    place-items: center;
+    text-align: center;
+
+    .type-select__option {
+      padding: 0.5rem;
+      border-radius: 5px;
+      min-width: 70px;
+      background-color: #ccc;
+
+      h4 {
+        margin: 0;
+      }
+
+      &:hover {
+        cursor: pointer;
+        background-color: #ccc;
+      }
+    }
+  }

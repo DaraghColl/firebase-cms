@@ -1,5 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Inject, Input } from '@angular/core';
+import {
+  MatDialog,
+  MatDialogRef,
+  MAT_DIALOG_DATA,
+} from '@angular/material/dialog';
 
+import { TypeSelectDialogComponent } from '../type-select-dialog/type-select-dialog.component';
 @Component({
   selector: 'app-type-builder',
   templateUrl: './type-builder.component.html',
@@ -7,14 +13,21 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class TypeBuilderComponent implements OnInit {
   @Input() contentType: any;
+  constructor(public dialog: MatDialog) {}
 
-  name: string = '';
-  constructor() {}
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-    console.warn('********');
-    console.warn(this.contentType);
+  openTypeSelect() {
+    const dialogRef = this.dialog.open(TypeSelectDialogComponent, {
+      width: '400px',
+      data: {
+        optionSelect: '',
+      },
+    });
 
-    this.name = 'Nancy';
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log('The dialog was closed');
+      console.warn(result);
+    });
   }
 }

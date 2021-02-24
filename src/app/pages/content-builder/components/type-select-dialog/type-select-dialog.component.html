@@ -1,0 +1,11 @@
+<div class="type-select">
+    <!-- <h1 mat-dialog-title>{{data.title}}</h1> -->
+    <div class="type-select__option" *ngFor="let type of typeOptions">
+        <mat-icon>{{type.icon}}</mat-icon>
+
+        <h4 (click)="selectType(type.option)"> {{type.option}} </h4>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button (click)="onClose()">Close</button>
+    </div>
+</div>

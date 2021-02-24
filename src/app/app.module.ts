@@ -18,6 +18,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import { MatDialogModule } from '@angular/material/dialog';
+import { TypeSelectDialogComponent } from './pages/content-builder/components/type-select-dialog/type-select-dialog.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,7 @@ import { MatInputModule } from '@angular/material/input';
     LoginComponent,
     TypeListComponent,
     TypeBuilderComponent,
+    TypeSelectDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,6 +41,7 @@ import { MatInputModule } from '@angular/material/input';
     MatSidenavModule,
     MatButtonModule,
     MatInputModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
