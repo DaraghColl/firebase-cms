@@ -13,19 +13,19 @@ import {
 export class TypeSelectDialogComponent implements OnInit {
   typeOptions = [
     {
-      option: 'Input',
+      option: 'input',
       icon: 'text_format',
     },
     {
-      option: 'Textarea',
+      option: 'textarea',
       icon: 'text_format',
     },
     {
-      option: 'Dropdown',
+      option: 'dropdown',
       icon: 'text_format',
     },
     {
-      option: 'Image',
+      option: 'image',
       icon: 'text_format',
     },
   ];

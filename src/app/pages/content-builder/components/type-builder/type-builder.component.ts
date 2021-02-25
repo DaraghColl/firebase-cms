@@ -1,4 +1,11 @@
-import { Component, OnInit, Inject, Input } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Inject,
+  Input,
+  Output,
+  EventEmitter,
+} from '@angular/core';
 import {
   MatDialog,
   MatDialogRef,
@@ -13,6 +20,9 @@ import { TypeSelectDialogComponent } from '../type-select-dialog/type-select-dia
 })
 export class TypeBuilderComponent implements OnInit {
   @Input() contentType: any;
+  @Output() propAdded = new EventEmitter<any>();
+  @Output() propRemoved = new EventEmitter<any>();
+
   constructor(public dialog: MatDialog) {}
 
   ngOnInit(): void {}
@@ -26,8 +36,24 @@ export class TypeBuilderComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      console.log('The dialog was closed');
-      console.warn(result);
+      this.newPropertyTypeCreated(result.optionSelect);
     });
+  }
+
+  newPropertyTypeCreated(type) {
+    let obj = {
+      id: this.contentType.id,
+      type: type,
+    };
+    this.propAdded.emit(obj);
+  }
+
+  propertyTypeRemoved(prop, index) {
+    let obj = {
+      id: this.contentType.id,
+      prop: prop,
+      propIndex: index,
+    };
+    this.propRemoved.emit(obj);
   }
 }

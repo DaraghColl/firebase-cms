@@ -4,6 +4,7 @@
     </mat-sidenav>
 
     <mat-sidenav-content class="main">
-        <app-type-builder *ngIf="selectedContentType" [contentType]="selectedContentType"></app-type-builder>
+        <app-type-builder *ngIf="selectedContentType" [contentType]="selectedContentType"
+            (propAdded)="propAdded($event)" (propRemoved)="propRemoved($event)"></app-type-builder>
     </mat-sidenav-content>
 </mat-sidenav-container>

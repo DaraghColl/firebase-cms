@@ -24,6 +24,10 @@
 
     .type-builder__field {
       margin-bottom: 2rem;
+
+      .mat-icon {
+        cursor: pointer;
+      }
     }
   }
 }

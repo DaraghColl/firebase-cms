@@ -16,13 +16,13 @@
                 Type</button>
         </div>
 
-        <div *ngFor="let field of contentType.props" [ngSwitch]="field.type">
+        <div *ngFor="let field of contentType.props; let i = index" [ngSwitch]="field.type">
 
             <!-- INPUT TYPES-->
             <mat-form-field *ngSwitchCase="'input'" class="type-builder__field">
                 <mat-label>Property Name</mat-label>
                 <input matInput [(ngModel)]="field.title" required>
-                <mat-icon matSuffix>delete</mat-icon>
+                <mat-icon matSuffix (click)="propertyTypeRemoved(field, i)">delete</mat-icon>
                 <mat-hint align="start"><strong>type: {{field.type}}</strong> </mat-hint>
             </mat-form-field>
 
@@ -30,7 +30,7 @@
             <mat-form-field *ngSwitchCase="'textarea'" class="type-builder__field">
                 <mat-label>Property Name</mat-label>
                 <input matInput [(ngModel)]="field.title" required>
-                <mat-icon matSuffix>delete</mat-icon>
+                <mat-icon matSuffix (click)="propertyTypeRemoved(field, i)">delete</mat-icon>
                 <mat-hint align="start"><strong>type: {{field.type}}</strong> </mat-hint>
             </mat-form-field>
         </div>
